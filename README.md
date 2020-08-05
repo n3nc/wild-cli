@@ -2,7 +2,7 @@
 
 Official CLI for Wildebeest for N3NCLOUD, accessible using a command line tool implemented in Python 3.
 
-Wildbeest is a CKAN-based solution for building data portals that share public data by DCAT standards. Wildbeest provides the most efficient disclosure of registered datasets and standard protocols for sharing data with other data catalog systems. Wildbeest uses the most compatible standard format and is the best solution for global data sharing. You can get more information on the [Wildebeest Documents](https://d3.n3ncloud.co.kr/doc) and [N3NCLOUD](https://www.n3ncloud.co.kr/).
+Wildbeest is a CKAN-based solution for building data portals that share public data by DCAT standards. Wildbeest provides the most efficient disclosure of registered datasets and standard protocols for sharing data with other data catalog systems. Wildbeest uses the most compatible standard format and is the best solution for global data sharing. You can get more information on the [Wildebeest Documents](http://d3.n3ncloud.co.kr/wildebeest/1.0) and [N3NCLOUD](https://www.n3ncloud.co.kr/).
 ## Installation
 
 Ensure you have Python 3 and the package manager `pip` installed.
@@ -26,13 +26,13 @@ To use the Wildebeest CLI, sign up for a Wildbeest account at your site. Then go
 Environment:
 ```bash
 export WB_SERVER_URL=http://[your-site-url]
-export WB_API_TOKEN=[your-api-key-string]
+export WB_API_KEY=[your-api-key-string]
 ```
 Example:
 
 ```bash
 export WB_SERVER_URL=http://127.0.0.1
-export WB_API_TOKEN=e2806328-af09-41b2-b389-3fd78645fdcb
+export WB_API_KEY=e2806328-af09-41b2-b389-3fd78645fdcb
 ```
 
 ## Commands
