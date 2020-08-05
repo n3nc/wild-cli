@@ -1,0 +1,2 @@
+# wild-cli
+Wildebeest CLI
