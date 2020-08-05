@@ -2,6 +2,7 @@
 
 Official CLI for Wildebeest for N3NCLOUD, accessible using a command line tool implemented in Python 3.
 
+Wildbeest is a CKAN-based solution for building data portals that share public data by DCAT standards. Wildbeest provides the most efficient disclosure of registered datasets and standard protocols for sharing data with other data catalog systems. Wildbeest uses the most compatible standard format and is the best solution for global data sharing. You can get more information on the [Wildebeest Documents](https://d3.n3ncloud.co.kr/doc) and [N3NCLOUD](https://www.n3ncloud.co.kr/).
 ## Installation
 
 Ensure you have Python 3 and the package manager `pip` installed.
@@ -152,8 +153,8 @@ $ wild d l -p 2
 usage: wild datasets show [-h] [dataset]
 
 optional arguments:
-  -h, --help  show this help message and exit
-  dataset     Dataset Id (use "wild datasets list" to show options)
+  -h, --help            show this help message and exit
+  dataset               Dataset Id (use "wild datasets list" to show options)
 ```
 
 Example:
@@ -166,12 +167,12 @@ $ wild d sh 01631b54-16a3-4a84-8dac-3e8d142e12b9
 ##### Search specific datasets
 
 ```
-usage: wild datasets search [-h] [-p PAGE] [dataset]
+usage: wild datasets search [-h] [-p PAGE] [query]
 
 optional arguments:
-  -h, --help  show this help message and exit
-  dataset     Dataset Id (use "wild datasets list" to show options)
+  -h, --help            show this help message and exit
   -p PAGE, --page PAGE  Page number for results paging. Page size is 20 by default
+  query                 Query string what you want to find in datasets
 ```
 
 Example:
@@ -187,8 +188,8 @@ $ wild d s 'cloud platform' -p 2
 usage: wild datasets resources [-h] [dataset]
 
 optional arguments:
-  -h, --help  show this help message and exit
-  dataset     Dataset Id (use "wild datasets list" to show options)
+  -h, --help            show this help message and exit
+  dataset               Dataset Id (use "wild datasets list" to show options)
 ```
 
 Example:
