@@ -13,7 +13,7 @@ setup(
     author='N3NCLOUD',
     author_email='mgkim@n3ncloud.co.kr',
     url='https://github.com/n3nc/wild-cli',
-    download_url = 'https://github.com/n3nc/wild-cli',
+    download_url = 'https://github.com/n3nc/wild-cli/archive/v_01.tar.gz',
     keywords=['Wildebeest', 'wild', 'API', 'CLI', 'N3NCLOUD'],
     entry_points={'console_scripts': ['wild = wb.cli:main']},
     install_requires=[
