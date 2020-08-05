@@ -4,18 +4,18 @@ from setuptools import setup, find_packages
 
 setup(
     name='wild',
-    version='0.0.1',
-    description='Wildebeest API',
+    packages = ['wild'],
+    version='0.1.0',
+    description='Wildebeest CLI',
     long_description=
-    ('Official API for https://d3.n3ncloud.co.kr, accessible using a command line '
-     'tool implemented in Python. Beta release - N3NCloud reserves the right to '
-     'modify the API functionality currently offered.'),
-    author='N3NCloud',
-    author_email='admin@n3ncloud.co.kr',
-    url='https://github.com/n3nc/wildebeest-api',
-    keywords=['Wildebeest', 'wild', 'API'],
+    ('Official CLI for Wildebeest, accessible using a command line '
+     'tool implemented in Python.'),
+    author='N3NCLOUD',
+    author_email='mgkim@n3ncloud.co.kr',
+    url='https://github.com/n3nc/wild-cli',
+    download_url = 'https://github.com/n3nc/wild-cli',
+    keywords=['Wildebeest', 'wild', 'API', 'CLI', 'N3NCLOUD'],
     entry_points={'console_scripts': ['wild = wb.cli:main']},
-    test_suite='wb.cli.main',
     install_requires=[
         # Restriction that urllib3's version is less than 1.25 needed to avoid
         # requests dependency problem.
@@ -23,4 +23,13 @@ setup(
         'requests'
     ],
     packages=find_packages(),
-    license='Apache 2.0')
+    license='Apache 2.0',
+    classifiers=[
+    'Development Status :: 4 - Beta',      # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
+    'License :: OSI Approved :: Apache 2.0 License',  
+    'Environment :: Console',
+    'Programming Language :: Python :: 3',      
+    'Programming Language :: Python :: 3.4',
+    'Programming Language :: Python :: 3.5',
+    'Programming Language :: Python :: 3.6',
+  ])
