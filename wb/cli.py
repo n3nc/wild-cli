@@ -2,47 +2,38 @@ import argparse
 from wb import WildebeestApi
 from wb import api
 import os
+import sys
 
 def main():
 
     if 'WB_SERVER_URL' not in os.environ.keys():
-        print("wild is required WB_SERVER_URL information to access Wildebeest Server.")
-        print("please export it to os environment.")
+        print("")
+        print("* wild is required WB_SERVER_URL information to access Wildebeest Server.")
+        print("* please export it to os environment.")
         print("")
         return
 
     if 'WB_API_KEY' not in os.environ.keys():
-        print("Only you can access public datasets without WB_API_KEY.");
-        print("if you want to access your private datasets what registered in Wildebeest,");
-        print("export your API Key to os environment.")
+        print("")
+        print("* Only you can access public datasets without WB_API_KEY.");
+        print("* if you want to access your private datasets what registered in Wildebeest,");
+        print("* export your API Key to os environment.")
         print("")
 
     parser = argparse.ArgumentParser(
         description='Wildebeest Data Catalogue CommandLine Interface by N3NCLOUD',
-        formatter_class=argparse.RawTextHelpFormatter)
+        formatter_class=argparse.RawTextHelpFormatter
+        )
 
-    parser.add_argument('-v',
-                        '--version',
-                        action='version',
-                        version='Wildebeest API ' + WildebeestApi.__version__)
-
-    subparsers = parser.add_subparsers(title='commands',
-                                       help=Help.wildebeest,
-                                       dest='command')
-
-    subparsers.required = False
-    subparsers.choices = Help.wildebeest_choices
-    # parse_organizations(subparsers)
-    # parse_datasets(subparsers)
-    # parse_resource(subparsers)
-    define_command(subparsers)
+    define_command(parser)
 
     args = parser.parse_args()
     command_args = {}
     command_args.update(vars(args))
 
     if 'func' not in command_args.keys():
-        print(" Wildbeest CommandLine Interface " + WildebeestApi.__version__)
+        print("")
+        print(" Wildebeest Data Catalogue CommandLine Interface " + WildebeestApi.__version__)
         print("")
         print("   Homepage: http://www.n3ncloud.co.kr")
         print("   Github: https://github.com/n3nc/wild-cli")
@@ -74,7 +65,7 @@ def main():
         exit(1)
 
 
-def define_command(subparsers):
+def define_command(parser):
     commands = {
         'organizations': {
             'help': 'Commands related to Wildebeest organizations',
@@ -221,6 +212,25 @@ def define_command(subparsers):
             }
         }
     }
+
+    keywords = []
+    keywords.extend(commands.keys())
+    for cmd_desc in commands.values():
+        if  'aliases' in cmd_desc:
+            keywords.extend(cmd_desc['aliases'])
+
+    parser.add_argument('-v',
+                        '--version',
+                        action='version',
+                        version='Wildebeest API ' + WildebeestApi.__version__)
+
+    subparsers = parser.add_subparsers(title='commands',
+                                       help='',
+                                       dest='command')
+
+    subparsers.required = False
+    subparsers.choices = keywords
+
     parse_commands(subparsers, commands)
 
 

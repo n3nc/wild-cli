@@ -1,1 +1,5 @@
 wild.egg-info/
+build/
+dist/
+__pycache__/
+wb/api/__pycache__/
