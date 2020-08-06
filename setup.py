@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='wild',
-    version='1.0.1',
+    version='1.0.3',
     description='Wildebeest CLI for Data Catalog at https://www.n3ncloud.co.kr',
     long_description=
     ('Official CLI for Wildebeest for N3NCLOUD, accessible using a command line tool implemented in Python 3.\n\n'
@@ -13,19 +13,20 @@ setup(
     author='N3NCLOUD',
     author_email='mgkim@n3ncloud.co.kr',
     url='https://github.com/n3nc/wild-cli',
-    download_url = 'https://github.com/n3nc/wild-cli/archive/v_10.tar.gz',
+    download_url = 'https://github.com/n3nc/wild-cli/archive/v_103.tar.gz',
     keywords=['Wildebeest', 'wild', 'API', 'CLI', 'N3NCLOUD'],
     entry_points={'console_scripts': ['wild = wb.cli:main']},
     install_requires=[
         # Restriction that urllib3's version is less than 1.25 needed to avoid
         # requests dependency problem.
         'urllib3 >= 1.21.1, < 1.25',
+        'urllib',
         'requests'
     ],
     packages=find_packages(),
     license='Apache 2.0',
     classifiers=[
-    'Development Status :: 4 - Beta',      # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
+    'Development Status :: 5 - Production/Stable',      # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
     'License :: OSI Approved :: Apache Software License',  
     'Environment :: Console',
     'Programming Language :: Python :: 3',      
