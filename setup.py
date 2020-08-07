@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='wild',
-    version='1.0.3',
+    version='1.0.4',
     description='Wildebeest CLI for Data Catalog at https://www.n3ncloud.co.kr',
     long_description=
     ('Official CLI for Wildebeest for N3NCLOUD, accessible using a command line tool implemented in Python 3.\n\n'
@@ -20,7 +20,6 @@ setup(
         # Restriction that urllib3's version is less than 1.25 needed to avoid
         # requests dependency problem.
         'urllib3 >= 1.21.1, < 1.25',
-        'urllib',
         'requests'
     ],
     packages=find_packages(),

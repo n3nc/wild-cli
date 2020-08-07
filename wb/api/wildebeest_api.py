@@ -7,7 +7,7 @@ import requests
 import sys
 
 class WildebeestApi(object):
-    __version__ = '1.0.3'
+    __version__ = '1.0.4'
     server_url = ''
     api_key = None
 
