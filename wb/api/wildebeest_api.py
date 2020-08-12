@@ -1,5 +1,5 @@
 import urllib3
-import urllib
+# import urllib
 import json
 import shutil
 import os
