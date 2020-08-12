@@ -32,20 +32,19 @@ class WildebeestApi(object):
                             (organization_id, (int(page)-1) * 20))
         if result is not None:
             print(' Found: %d' % result.get('count'))
-            print('%38s %-75s %9s' % ('ID', 'TITLE', 'RESOURCES'))
+            print(' %-36s %9s %-75s' % ('ID', 'RESOURCES', 'TITLE'))
             if 'results' in result.keys():
                 for dataset in result['results']:
-                    print(' %36s %-80s %4d' % (dataset['id'], dataset['title'][:80], dataset['num_resources']))
-
+                    print(' %36s %9d %-80s' % (dataset['id'], dataset['num_resources'], dataset['title'][:80] ))
 
     def datasets_list_cli(self, page=1):
         result = self.GetResult('/api/3/action/package_search?&include_private=True&rows=20&start=%d' % ((int(page)-1) * 20))
         if result is None:
             return
         print(' Found: %d' % result.get('count'))
-        print('%38s %-75s %9s' % ('ID', 'TITLE', 'RESOURCES'))
+        print(' %-36s %9s %-75s' % ('ID', 'RESOURCES', 'TITLE'))
         for result in result['results']:
-            print(' %36s %-80s %4d' % (result['id'], result['title'][:80], result['num_resources']))
+            print(' %36s %9d %-80s' % (result['id'], result['num_resources'], result['title'][:80] ))
 
     def datasets_show_cli(self, dataset_id):
         print(json.dumps(self.GetResult('/api/3/action/package_show?id=%s' % dataset_id), sort_keys=True, indent=4))
@@ -55,9 +54,9 @@ class WildebeestApi(object):
         if result is None:
             return
         print(' Found: %d' % result.get('count'))
-        print(' %36s %-75s %9s' % ('ID', 'TITLE', 'RESOURCES'))
+        print(' %-36s %9s %-75s' % ('ID', 'RESOURCES', 'TITLE'))
         for result in result['results']:
-            print(' %36s %-80s %4d' % (result['id'], result['title'][:80], result['num_resources']))
+            print(' %36s %9d %-80s' % (result['id'], result['num_resources'], result['title'][:80] ))
 
     def datasets_resources_cli(self, dataset=''):
         result = self.GetResult('/api/3/action/package_show?id=%s' % dataset)
